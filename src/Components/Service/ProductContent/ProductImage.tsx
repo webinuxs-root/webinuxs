@@ -79,7 +79,7 @@ const ProductImage = () => {
                             </thead>
                             <tbody>
                                 {specification.map((item, i) => (
-                                    <tr>
+                                    <tr key={i}>
                                         <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">{item.name}</td>
                                         <td className="py-2 px-3 border-b border-l border-r border-solid whitespace-pre bg-main/5  border-gray-100">{item.value}</td>
                                     </tr>

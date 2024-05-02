@@ -107,13 +107,13 @@ const Payment = () => {
                 <h4 className="text-2xl font-semibold mb-6">Zero <span className="text-main">Payment</span></h4>
                 <div className="border border-solid border-green-600 p-5 bg-green-50 rounded-md">
                     <h4 className="text-2xl font-semibold mb-2">We are not accepting any payment without showing you any demo.</h4>
-                    <p className="text-base text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                    <p className="text-base text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
                     <h5 className="my-5 text-lg font-semibold text-green-600">What is our payment policy?</h5>
-                    <p className="text-base text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                    <p className="text-base text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
                     <p className="mt-5 bg-green-600 px-3 py-2 text-white rounded w-max">** Please click on confirm order to place an order.</p>
                 </div>
                 <div className="bg-main mt-12 px-4 py-3 rounded-md text-white">
-                    <p className="italic">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                    <p className="italic">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
                 </div>
             </div>
             <div className="col-span-4">

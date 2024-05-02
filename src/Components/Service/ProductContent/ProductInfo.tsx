@@ -184,7 +184,7 @@ const ProductInfo = () => {
                 </div>
                 <button className="flex gap-3 w-full justify-center items-center mt-4 py-2.5 bg-[#02a799] text-white rounded">
                     <IoLogoWhatsapp />
-                    <span>What's App Support</span>
+                    <span>What&apos;s App Support</span>
                 </button>
                 <p className="text-center italic text-sm mt-2">{data.payment}</p>
             </div>

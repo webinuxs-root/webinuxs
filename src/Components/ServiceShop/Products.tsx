@@ -52,6 +52,7 @@ const Products = () => {
             category: searchParams.get("category") || "",
             price: [Number(searchParams.get("range")?.split("-")[0] || 500), Number(searchParams.get("range")?.split("-")[1] || 4500)]
         }))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchParams])
 
     useEffect(() => {

@@ -58,7 +58,7 @@ const ServiceList = () => {
                                 </thead>
                                 <tbody>
                                     {item.order_products.map((order, i) => (
-                                        <tr>
+                                        <tr key={i}>
                                             <td className="py-3 px-2">{i + 1}</td>
                                             <td className="py-3 px-2">
                                                 <Image src={order.product?.image_1 as string} alt={order.product?.title as string} width={600} height={400} className="w-[60px]" />

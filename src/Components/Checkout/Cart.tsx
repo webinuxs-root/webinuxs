@@ -103,6 +103,7 @@ const Cart = () => {
                 discount: discount
             }))
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selected, discount])
 
     return (
