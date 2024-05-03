@@ -26,8 +26,8 @@ const Category = async () => {
             <section className="py-14">
                 <Container>
                     <div className="mb-14">
-                        <h4 className="text-3xl font-semibold text-main">Category</h4>
-                        <p className="text-primary text-base mt-1.5">Find your targeted service</p>
+                        <h4 className="text-3xl font-semibold text-main">Categories</h4>
+                        <p className="text-primary text-base mt-1.5">Let's dive what you required most.</p>
                     </div>
                     <div>
                         <div className="grid grid-cols-6 gap-4">

@@ -216,7 +216,7 @@ const Cart = () => {
                     </table>
                 </div>
                 <div className="mt-4">
-                    <button className="bg-main w-full py-3 rounded-md text-white font-semibold" onClick={() => setStep?.(2)}>
+                    <button className={`bg-main w-full py-3 rounded-md text-white font-semibold ${selected?.length === 0 ? "opacity-50" : ""}`} onClick={() => setStep?.(2)} disabled={selected?.length === 0}>
                         Proceed Checkout (${price?.total})
                     </button>
                 </div>

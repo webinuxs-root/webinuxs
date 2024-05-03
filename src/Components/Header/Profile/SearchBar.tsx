@@ -69,7 +69,7 @@ const SearchBar = () => {
                 <div className={`h-[40px] absolute top-0 right-full bg-black rounded-md mr-[16px] transition-all ${search ? "w-[450px]" : "w-0"}`}>
                     <input
                         className="bg-transparent px-3 focus:outline-none w-full h-full rounded-md text-secondary"
-                        placeholder="Type your query"
+                        placeholder="Search what you want...?"
                         {...register("search", { required: true })}
                     />
                 </div>

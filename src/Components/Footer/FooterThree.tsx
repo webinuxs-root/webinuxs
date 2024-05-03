@@ -3,10 +3,10 @@ import Link from "next/link";
 //Data
 const Data = [
     { path: "/my-account", Name: "Your Account" },
-    { path: "/my-order", Name: "Your Order" },
+    { path: "/my-account/my-purchase", Name: "Your Purchase" },
     { path: "/terms-and-condition", Name: "Terms & Conditions" },
     { path: "/privacy-policy", Name: "Privacy Policy" },
-    { path: "/return-and-refund-policy", Name: "Return & Refund Policy" },
+    { path: "/webinuxs-payment-policy", Name: "Our Payment Policy" },
 ]
 
 const FooterThree = () => {

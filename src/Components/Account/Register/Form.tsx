@@ -122,7 +122,7 @@ const Form = () => {
                     </div>
                     <div className="text-left">
                         <label htmlFor="billingAddress" className="text-[15px] text-c-novel cursor-pointer select-none">
-                            By creating the account you are accepting our <Link href="/" className="text-[#4493f8]">Terms & Condition</Link> and <Link href="/" className="text-[#4493f8]">Return & Refund Policy</Link>
+                            By creating the account you are accepting our <Link href="/terms-and-condition" className="text-[#4493f8]">Terms & Condition</Link> and <Link href="/webinuxs-payment-policy" className="text-[#4493f8]">Our Payment Policy</Link>
                         </label>
                     </div>
                 </div>

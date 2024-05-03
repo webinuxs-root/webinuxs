@@ -72,7 +72,7 @@ const ProfileSettings = () => {
         <div>
             <div className="mb-6">
                 <h4 className="text-2xl font-semibold">Update Your <span className="text-main">Profile</span></h4>
-                <p className="text-[15px] mt-1 text-gray-600">You can update your profile from here.</p>
+                <p className="text-[15px] mt-1 text-gray-600">Update your profile from here. Please fill the form.</p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid grid-cols-2 gap-5">

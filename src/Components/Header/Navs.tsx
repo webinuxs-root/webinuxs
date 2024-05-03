@@ -5,7 +5,7 @@ const Data = [
     { path: "/", name: "Home" },
     { path: "/service", name: "Services" },
     // { path: "/micro", name: "Micro" },
-    { path: "/category", name: "Category" },
+    { path: "/category", name: "Categories" },
     { path: "/about-us", name: "About Us" },
 ]
 

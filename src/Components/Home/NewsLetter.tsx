@@ -46,8 +46,8 @@ const NewsLetter = () => {
             <Container>
                 <div className="grid grid-cols-2 gap-5 bg-[url('/news-letter.png')] bg-center bg-no-repeat bg-cover px-12 py-28 rounded-lg">
                     <div>
-                        <h4 className="text-5xl font-semibold">Stay home & get your <br />needs from <span className="text-main">our shop</span></h4>
-                        <p className="text-lg mt-6">Save up to 50%  off on your first order</p>
+                        <h4 className="text-5xl font-semibold">Subscribe for Exclusive <br />Offers and<span className="text-main"> Updates</span></h4>
+                        <p className="text-lg mt-6">Get the Latest News and Deals Delivered Straight to your Inbox.</p>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="flex mt-12 relative">
                                 <input

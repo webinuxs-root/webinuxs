@@ -27,7 +27,7 @@ const Trends = async () => {
                 <Container>
                     <div className="rounded-lg overflow-hidden">
                         <div className="relative">
-                            <Image src={data?.image as string} alt={data?.alt as string} width={1550} height={320} className="w-full object-cover object-center" />
+                            <Image src={data?.image as string} alt={data?.alt as string} width={1550} height={300} className="w-full object-cover object-center" />
                             <div className="absolute left-1/2 -translate-x-1/2 bottom-[26%] text-white text-center">
                                 <h4 className="text-xl font-medium">End In</h4>
                                 <p className="bg-white w-max px-5 font-medium mx-auto py-1.5 rounded-lg text-primary mt-1.5">{data?.end_in}</p>

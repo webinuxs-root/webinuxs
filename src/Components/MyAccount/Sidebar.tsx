@@ -54,7 +54,7 @@ const Sidebar = () => {
                 {data?.user?.user_metadata.first_name && data?.user?.user_metadata.last_name &&
                     <h4 className="text-lg text-white mt-2">{data?.user?.user_metadata.first_name} {data?.user?.user_metadata.last_name}</h4>
                 }
-                <p className="text-sm text-white">{data?.user?.email}</p>
+                <p className="text-sm text-white mt-2">{data?.user?.email}</p>
             </div>
             <div className="py-4 px-1.5">
                 {ButtonList.map((item, i) => (

@@ -29,7 +29,7 @@ const faqData = [
     },
     {
         title: "How can I get in touch with your team to discuss a project?",
-        content: "You can easily reach us through the contact form on our website, by phone, or by email. We're always eager to hear about your projects and ideas!"
+        content: "You can easily reach us through the what'sapp, other communication platform like facebook and linkedIn, by phone, or by email. We're always eager to hear about your projects and ideas!"
     }
 ]
 

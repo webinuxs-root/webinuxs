@@ -26,7 +26,7 @@ const FeatureProduct = async () => {
             <Container>
                 <div className="mb-10">
                     <h4 className="text-3xl font-semibold text-main">Feature Services</h4>
-                    <p className="text-primary text-base mt-1.5">Best service with features</p>
+                    <p className="text-primary text-base mt-1.5">Most features services from Webinuxs and we are good at.</p>
                 </div>
                 <div className="grid grid-cols-4 gap-7">
                     {data?.map((item, i) => (

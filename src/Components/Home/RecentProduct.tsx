@@ -26,7 +26,7 @@ const RecentProduct = async () => {
             <Container>
                 <div className="mb-10">
                     <h4 className="text-3xl font-semibold text-main">Recent Services</h4>
-                    <p className="text-primary text-base mt-1.5">Best service with recent</p>
+                    <p className="text-primary text-base mt-1.5">Expand our latest offerings and service portfolio.</p>
                 </div>
                 <div className="grid grid-cols-4 gap-7">
                     {data?.map((item, i) => (

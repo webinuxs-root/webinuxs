@@ -12,9 +12,9 @@ const Services = () => {
                         <div className="flex-1 w-full bg-main h-1">
 
                         </div>
-                        <h4 className="text-2xl font-bold">Our Key <span className="text-main">Services</span></h4>
+                        <h4 className="text-2xl font-bold">What We <span className="text-main">Do?</span></h4>
                     </div>
-                    <p className="w-[40%] 2xl:w-[40%] xl:w-[60%] lg:w-[80%] xxs:w-full ml-auto mt-2">Our team combines innovation and expertise to breathe life into your ideas, enhancing your online presence, and solving complex challenges. We harness the power of cutting-edge technologies to deliver captivating web solutions.</p>
+                    <p className="w-[40%] 2xl:w-[40%] xl:w-[60%] lg:w-[80%] xxs:w-full ml-auto mt-2">We harness the power of cutting-edge technologies in three major field.</p>
                 </div>
                 <div className="grid grid-cols-3 lg:grid-cols-3 xxs:grid-cols-1 gap-8 mt-20">
                     {data.map((item, i) => (

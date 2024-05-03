@@ -132,11 +132,13 @@ const Cart = () => {
                     </tbody>
                 </table>
                 {cart?.length === 0 &&
-                    <p className="text-main text-center mt-4">No services in your cart. Please try to add some service into your cart</p>
+                    <p className="text-main text-center mt-4">No services added yet. <br />
+                        Keep exploring 😉
+                    </p>
                 }
                 <div className="mt-6">
                     <Link href={"/checkout"} className="bg-main block text-center w-full py-2.5 rounded-md font-semibold text-secondary">Checkout (${cart?.reduce((acc, obj) => acc + getDiscountPrice(obj.product as Tables<"product">), 0)})</Link>
-                    <p className="text-sm text-center italic mt-2">You can unselect or select services in the checkout page.</p>
+                    <p className="text-sm text-center italic mt-2">You can unselect any selected services in the checkout page.</p>
                 </div>
             </Dialog>
         </Fragment>

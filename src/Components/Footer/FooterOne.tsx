@@ -8,7 +8,7 @@ const FooterOne = () => {
     return (
         <div>
             <Image src="/logo-2.png" width={500} height={331.23} alt="Logo" className="w-[180px]" />
-            <p className="text-base mt-4 opacity-95">Largest product search engine, maximum categorized online shopping mall and quickest home delivery system.</p>
+            <p className="text-base mt-4 opacity-95">We&apos;re top choice for custom web application. Our wide range of options suits any industry for building interactive web application.</p>
             <ul className="mt-4 [&_li_a]:flex [&_li_a]:gap-3 [&_li]:my-1 [&_li_a]:items-center">
                 <li>
                     <Link href="tel:+8801521744654">

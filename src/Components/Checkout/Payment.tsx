@@ -106,14 +106,14 @@ const Payment = () => {
             <div className="col-span-8">
                 <h4 className="text-2xl font-semibold mb-6">Zero <span className="text-main">Payment</span></h4>
                 <div className="border border-solid border-green-600 p-5 bg-green-50 rounded-md">
-                    <h4 className="text-2xl font-semibold mb-2">We are not accepting any payment without showing you any demo.</h4>
-                    <p className="text-base text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                    <h4 className="text-2xl font-semibold mb-2">We are not accepting any payment without showing you demo.</h4>
+                    <p className="text-base text-gray-600">You don't need to pay during purchasing our service. Here we are using zero payment system. Zero payment system means, you don't need to give any payment when you are purchasing a service from our website. After purchasing your service we will contact with you and show you our demo website. If you choose we will continue further process.</p>
                     <h5 className="my-5 text-lg font-semibold text-green-600">What is our payment policy?</h5>
-                    <p className="text-base text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-                    <p className="mt-5 bg-green-600 px-3 py-2 text-white rounded w-max">** Please click on confirm order to place an order.</p>
+                    <p className="text-base text-gray-600">Our payment policy is zero payment policy. In this policy you can purchase any kind services from our website without zero payment. Our policy is based on 3 basic steps. Firstly, you can purchase services without paying. Secondly, we will contact you and show you our demos. Lastly if you choose our demo, you can confirmed by paying or can cancel the purchase.</p>
+                    <p className="mt-5 bg-green-600 px-3 py-2 text-white rounded w-max">** Please click on confirm purchase button to place an order.</p>
                 </div>
                 <div className="bg-main mt-12 px-4 py-3 rounded-md text-white">
-                    <p className="italic">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                    <p className="italic">By placing the order, you are accepting our payment policy. We will contact with you in 2 working days after placing the orders. We will show all demos in live meeting, we believe this will increase trust between us.</p>
                 </div>
             </div>
             <div className="col-span-4">
@@ -165,7 +165,7 @@ const Payment = () => {
                 </div>
                 <div className="mt-4">
                     <button className="bg-main w-full py-3 rounded-md text-white font-semibold relative" onClick={onConfirm} disabled={isPending || prPending || dlPending}>
-                        <span className={`${(isPending || prPending || dlPending) && "opacity-20"}`}>Confirm Order</span>
+                        <span className={`${(isPending || prPending || dlPending) && "opacity-20"}`}>Confirm Purchase</span>
                         {(isPending || prPending || dlPending) &&
                             <div className="absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2">
                                 <Loading />

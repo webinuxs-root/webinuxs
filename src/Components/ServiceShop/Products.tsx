@@ -63,7 +63,7 @@ const Products = () => {
         <div className="col-span-9">
             <div className="flex items-center">
                 <div className="flex-1">
-                    <h4 className="text-xl">Showing full <span className="text-main">catalog results</span>, giving you the <span className="font-semibold">widest variety</span> of services at any price.</h4>
+                    <h4 className="text-xl">Showing full <span className="text-main">service results</span>, giving you the <span className="font-semibold">widest variety</span> of services at any price.</h4>
                     <p className="text-sm mt-3">{data?.count} services</p>
                 </div>
                 <div>

@@ -12,7 +12,7 @@ const faqData = [
     },
     {
         title: "Can you provide examples of projects you've worked on?",
-        content: "Certainly! Visit our portfolio section to explore a selection of projects that showcase our diverse range of web development and design work."
+        content: "Certainly! Our payment policy is zero payment, you can order without any payment and we showcase our diverse range of web development and design work. If you like our services, we will confirmed your order."
     },
     {
         title: "How do you determine the right technology stack for a project?",

@@ -71,7 +71,7 @@ const Address = () => {
             phone: profile?.user?.user_metadata?.phone,
             country: profile?.user?.user_metadata?.country,
             state: profile?.user?.user_metadata?.state,
-            update: true
+            update: false
         }
     })
 
@@ -222,7 +222,7 @@ const Address = () => {
                     <Controller
                         control={control}
                         name="update"
-                        render={({ field: { onChange, onBlur, value, ref } }) => (
+                        render={({ field: { onChange, value, } }) => (
                             <Checkbox
                                 checked={value}
                                 onChange={onChange}
@@ -231,7 +231,7 @@ const Address = () => {
                         )}
                     />
                 </div>
-                <p className="text-sm mt-6 italic">Please fill up the above form, before proceed to payment we will contact you and show you the demo the about the project.</p>
+                <p className="text-sm mt-6 italic">We are accepting zero payment system. Place order without paying any payment. After order we will show you demo, and confirmed order.</p>
             </div>
             <div className="col-span-4">
                 <h4 className="text-2xl font-semibold mb-6">Cart <span className="text-main">Summery</span></h4>

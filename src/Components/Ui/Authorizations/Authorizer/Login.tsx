@@ -2,7 +2,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { MdError } from "react-icons/md";
 import toast from "react-hot-toast";
-import Link from "next/link";
 
 //UI
 import { Loading, auth } from "@/Components/Ui";
@@ -58,7 +57,7 @@ const Login = () => {
             <h5 className="text-3xl text-gray-200 mb-2">
                 Login to Your Account
             </h5>
-            <p className="text-gray-400 mb-6">Please fill up the following form for creating account</p>
+            <p className="text-gray-400 mb-6">Please fill up the following form for login to your account</p>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-6">
                     <label htmlFor="email" className="block text-lg opacity-90">Email address <span className="text-main">*</span></label>
@@ -117,13 +116,13 @@ const Login = () => {
                 </div>
             </form>
             <div className="select-none text-center mt-4 text-secondary">
-                New in Webinuxs? <Link href="/account/register" className="text-main hover:underline">Create your account.</Link>
+                New in Webinuxs? <button onClick={() => auth.join()} className="text-main hover:underline">Create your account.</button>
             </div>
-            <div className="text-center mt-1.5">
+            {/* <div className="text-center mt-1.5">
                 <Link href={"/account/forget-password"} className="block text-main hover:underline">
                     Reset your password?
                 </Link>
-            </div>
+            </div> */}
         </div>
     );
 };

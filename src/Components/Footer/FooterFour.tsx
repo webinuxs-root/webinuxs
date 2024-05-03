@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
 
 //Components
@@ -10,8 +10,8 @@ import ComingSoon from "./FooterFour/ComingSoon";
 
 //Const Data
 const Data = [
-    { icon: <FaGithub />, url: "/" },
-    { icon: <FaLinkedin />, url: "/" }
+    { icon: <FaFacebookSquare />, url: "https://www.facebook.com/webinuxs/" },
+    { icon: <FaLinkedin />, url: "https://www.linkedin.com/company/webinuxs/" }
 ]
 
 const FooterFour = () => {
