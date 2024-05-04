@@ -248,7 +248,7 @@ const ProductInfo = () => {
                 <Image src="/logo-main.png" alt="Webinuxs" width={700} height={700} className="w-[150px] mx-auto" />
                 <p className="text-2xl mt-7 font-semibold">Webinuxs</p>
                 <p className="text-base text-gray-600">Best Freelance Services</p>
-                <p className="mt-5">This is not the end! Beside all the common eCommerce features, GeniusCart has many exclusives features which are not available in most eCommerce stores! You can use this system as single vendor store and if you want to grow your business in futures as ag.</p>
+                <p className="mt-5">Trustworthy, dedicated and experience web developers with over 6 years of experience and a track record or completing 70 projects for satisfied clients, we bring a wealth of expertise to your web application development needs.</p>
             </div>
         </div>
     );

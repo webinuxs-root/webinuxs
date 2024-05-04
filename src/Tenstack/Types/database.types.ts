@@ -407,6 +407,7 @@ export type Database = {
           rating_count: number
           regular_price: number
           resolution: boolean | null
+          sales: number | null
           slug: string
           specification: Json
           title: string
@@ -438,6 +439,7 @@ export type Database = {
           rating_count: number
           regular_price: number
           resolution?: boolean | null
+          sales?: number | null
           slug: string
           specification: Json
           title: string
@@ -469,6 +471,7 @@ export type Database = {
           rating_count?: number
           regular_price?: number
           resolution?: boolean | null
+          sales?: number | null
           slug?: string
           specification?: Json
           title?: string

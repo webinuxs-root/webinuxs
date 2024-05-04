@@ -52,7 +52,7 @@ const ProductBread = () => {
                 </p>
                 <p className="flex gap-2 items-center">
                     <FaCartArrowDown className="text-main" />
-                    <span className="font-semibold">105,670</span>
+                    <span className="font-semibold">{data.sales}</span>
                     <span className="text-gray-600">sales</span>
                 </p>
                 <p className="flex gap-2 items-center">
