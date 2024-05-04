@@ -27,7 +27,7 @@ const Category = async () => {
                 <Container>
                     <div className="mb-14">
                         <h4 className="text-3xl font-semibold text-main">Categories</h4>
-                        <p className="text-primary text-base mt-1.5">Let's dive what you required most.</p>
+                        <p className="text-primary text-base mt-1.5">Let&apos;s dive what you required most.</p>
                     </div>
                     <div>
                         <div className="grid grid-cols-6 gap-4">

@@ -4,23 +4,23 @@ import { Container } from "../Ui";
 const data = [
     {
         name: "Professional Support",
-        description: "Wish to get a website or mobile app Developed. Let us handle everything for you. Palmspire is the one stop solution for all your technical and managerial hurdles when developing a Mobile or Web Application."
+        description: "Our dedicated team of experts is committed to providing unparalleled professional support tailored to your unique needs. From initial consultation to ongoing assistance, we're here to ensure your success every step of the way."
     },
     {
-        name: "Awesome Designs",
-        description: "Wish to get a website or mobile app Developed. Let us handle everything for you. Palmspire is the one stop solution for all your technical and managerial hurdles when developing a Mobile or Web Application."
+        name: "Awesome Web Application",
+        description: "Elevate your online presence with our cutting-edge web application solutions. Designed for optimal performance and user experience, our applications combine innovation with functionality to deliver an awesome digital experience for your audience."
     },
     {
         name: "Planning & Execution",
-        description: "Wish to get a website or mobile app Developed. Let us handle everything for you. Palmspire is the one stop solution for all your technical and managerial hurdles when developing a Mobile or Web Application."
+        description: "Let us guide you through the intricacies of planning and executing your projects with precision and efficiency. From strategic roadmap development to meticulous implementation, our comprehensive approach ensures seamless execution and measurable results."
     }
 ]
 
 const awards = [
-    { number: "160", prefix: "+", title: "Make Special Day" },
-    { number: "20", prefix: "+", title: "Franchises" },
-    { number: "100", prefix: "+", title: "Happy Clients" },
-    { number: "1", prefix: "+", title: "Years in Business" },
+    { number: "70", prefix: "+", title: "Successful Projects" },
+    { number: "7", prefix: "+", title: "Our Teams" },
+    { number: "20", prefix: "+", title: "Happy Clients" },
+    { number: "6", prefix: "+", title: "Our Experience" },
 ]
 
 const Support = () => {
@@ -36,8 +36,8 @@ const Support = () => {
                     ))}
                 </div>
                 <div>
-                    <h4 className="text-xl 4xl:text-2xl font-bold mb-3">We make your special day Memorable.</h4>
-                    <p className="text-gray-600 text-sm">Wish to get a website or mobile app Developed. Let us handle everything for you. Palmspire is the one stop solution for all your technical and managerial hurdles when developing a Mobile or Web Application.</p>
+                    <h4 className="text-xl 4xl:text-2xl font-bold mb-3">We make your next web application.</h4>
+                    <p className="text-gray-600 text-sm">We don&apos;t just build websites; We craft digital experiences. With a passion for innovation and a commitment to excellence, We bring your ideas to life. Whether it's a sleek landing page, a robust e-commerce store, or a complex web application, We have the skills to make it happen.</p>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-10 w-[60%] lg-max:w-[60%] lg:w-[80%]  sm:w-[60%] xxs:w-full mt-10 ml-8">
                         {awards.map((item, i) => (
                             <div key={i}>
