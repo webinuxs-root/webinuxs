@@ -133,7 +133,7 @@ const Cart = () => {
                 </table>
                 {cart?.length === 0 &&
                     <p className="text-main text-center mt-4">No services added yet. <br />
-                        Keep exploring 😉
+                        Keep exploring.
                     </p>
                 }
                 <div className="mt-6">
