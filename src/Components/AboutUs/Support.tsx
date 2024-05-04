@@ -37,7 +37,7 @@ const Support = () => {
                 </div>
                 <div>
                     <h4 className="text-xl 4xl:text-2xl font-bold mb-3">We make your next web application.</h4>
-                    <p className="text-gray-600 text-sm">We don&apos;t just build websites; We craft digital experiences. With a passion for innovation and a commitment to excellence, We bring your ideas to life. Whether it's a sleek landing page, a robust e-commerce store, or a complex web application, We have the skills to make it happen.</p>
+                    <p className="text-gray-600 text-sm">We don&apos;t just build websites; We craft digital experiences. With a passion for innovation and a commitment to excellence, We bring your ideas to life. Whether it&apos;s a sleek landing page, a robust e-commerce store, or a complex web application, We have the skills to make it happen.</p>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-10 w-[60%] lg-max:w-[60%] lg:w-[80%]  sm:w-[60%] xxs:w-full mt-10 ml-8">
                         {awards.map((item, i) => (
                             <div key={i}>

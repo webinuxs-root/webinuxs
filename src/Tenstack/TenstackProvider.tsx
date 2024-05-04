@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryStreamedHydration } from "@tanstack/react-query-next-experimental";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
 const makeQueryClient = () => {
     return new QueryClient({
@@ -30,6 +31,12 @@ const TenstackProvider = ({ children }: { children: ReactNode }) => {
     return (
         <QueryClientProvider client={queryClient}>
             <ReactQueryStreamedHydration>
+                <ProgressBar
+                    height="4px"
+                    color="#FA4F00"
+                    options={{ showSpinner: false }}
+                    delay={300}
+                />
                 {children}
                 <ReactQueryDevtools initialIsOpen={false} />
             </ReactQueryStreamedHydration>
