@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 //Components
 import ProductContent from "@/Components/Service/ProductContent";
 
@@ -14,6 +16,29 @@ interface Props {
     params: {
         slug: string;
     }
+}
+
+export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
+    //Client
+    const supabase = createClient();
+    const queryClient = new QueryClient();
+
+    //Tenstack Query
+    const data = await queryClient.fetchQuery({
+        queryKey: ["productBySlug", slug],
+        queryFn: () => GET_PRODUCT_BY_SLUG(supabase, slug)
+    })
+
+    return {
+        title: data?.title,
+        twitter: {
+            title: data?.title
+        },
+        openGraph: {
+            title: data?.title
+        }
+    }
+
 }
 
 const Page = async ({ params: { slug } }: Props) => {

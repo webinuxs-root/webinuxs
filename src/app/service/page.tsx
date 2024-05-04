@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 //UI
 import { Container } from "@/Components/Ui";
 
@@ -11,6 +13,17 @@ import TenstackWrapper from "@/Tenstack/TenstackWrapper";
 import { QueryClient } from "@tanstack/react-query";
 import { createClient } from "@/Supabase/server";
 import { GET_ALL_CATEGORIES, GET_SERVICES } from "@/Tenstack/Functions/Services/service";
+
+//Metadata
+export const metadata: Metadata = {
+    title: "Services",
+    twitter: {
+        title: "Services"
+    },
+    openGraph: {
+        title: "Services"
+    }
+}
 
 //Interface
 interface Props {

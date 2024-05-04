@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { Metadata } from "next";
 
 //UI
 import { Container } from "@/Components/Ui";
@@ -12,6 +13,17 @@ import Illustration from "@/Components/Account/Illustration";
 import { QueryClient } from "@tanstack/react-query";
 import { createClient } from "@/Supabase/server";
 import { GET_PROFILE } from "@/Tenstack/Functions/Account/profile";
+
+//Metadata
+export const metadata: Metadata = {
+    title: "Login",
+    twitter: {
+        title: "Login"
+    },
+    openGraph: {
+        title: "Login"
+    }
+}
 
 const Page = async () => {
     //Client

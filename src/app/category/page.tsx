@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 //UI
 import { Container } from "@/Components/Ui";
 
@@ -9,6 +11,17 @@ import { QueryClient } from "@tanstack/react-query";
 import { createClient } from "@/Supabase/server";
 import { GET_ALL_CATEGORIES } from "@/Tenstack/Functions/Services/service";
 import { Tables } from "@/Tenstack/Types/database.types";
+
+//Metadata
+export const metadata: Metadata = {
+    title: "Categories",
+    twitter: {
+        title: "Categories"
+    },
+    openGraph: {
+        title: "Categories"
+    }
+}
 
 const Page = async () => {
     //Client

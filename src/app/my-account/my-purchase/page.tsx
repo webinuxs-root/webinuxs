@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 //Components
 import ServiceList from "@/Components/MyAccount/Purchase/ServiceList";
 
@@ -6,6 +8,17 @@ import TenstackWrapper from "@/Tenstack/TenstackWrapper";
 import { QueryClient } from "@tanstack/react-query";
 import { createClient } from "@/Supabase/server";
 import { GET_MY_PURCHASE } from "@/Tenstack/Functions/Account/purchase";
+
+//Metadata
+export const metadata: Metadata = {
+    title: "My Purchase",
+    twitter: {
+        title: "My Purchase"
+    },
+    openGraph: {
+        title: "My Purchase"
+    }
+}
 
 const Page = async () => {
     //Client

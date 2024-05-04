@@ -1,5 +1,18 @@
+import { Metadata } from "next";
+
 //UI
 import { Container } from "@/Components/Ui";
+
+//Metadata
+export const metadata: Metadata = {
+    title: "Terms & Conditions",
+    twitter: {
+        title: "Terms & Conditions"
+    },
+    openGraph: {
+        title: "Terms & Conditions"
+    }
+}
 
 const Page = () => {
     return (

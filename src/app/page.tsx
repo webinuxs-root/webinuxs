@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Fragment } from "react";
 
 //Components
@@ -16,6 +17,17 @@ import { QueryClient } from "@tanstack/react-query";
 import { createClient } from "@/Supabase/server";
 import { GET_PROFILE } from "@/Tenstack/Functions/Account/profile";
 import { GET_CART_LIST } from "@/Tenstack/Functions/Cart/cart";
+
+//Metadata
+export const metadata: Metadata = {
+  title: "Webinuxs",
+  twitter: {
+    title: "Webinuxs"
+  },
+  openGraph: {
+    title: "Webinuxs"
+  }
+}
 
 const Page = async () => {
   //Client
