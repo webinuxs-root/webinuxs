@@ -4,6 +4,7 @@ import Link from "next/link";
 import Profile from "./Profile/Profile";
 import Cart from "./Profile/Cart";
 import SearchBar from "./Profile/SearchBar";
+import MobileNav from "./MobileNav";
 
 //Tenstack & Supabase
 import TenstackWrapper from "@/Tenstack/TenstackWrapper";
@@ -30,15 +31,16 @@ const Rest = async () => {
 
     return (
         <TenstackWrapper client={queryClient}>
-            <div className="flex justify-end gap-4 items-center">
+            <div className="xxs:max-lg:flex-1 flex justify-end gap-4 items-center">
                 <SearchBar />
+                <MobileNav />
                 <Cart />
                 {!data.user &&
                     <>
-                        <Link href="/account/login" className="flex items-center justify-center bg-primary px-5 h-[40px] text-secondary rounded-md">
+                        <Link href="/account/login" className="flex items-center justify-center bg-primary px-5 h-[40px] text-secondary rounded-md xxs:max-lg:hidden">
                             <span className="font-semibold uppercase text-sm">Login</span>
                         </Link>
-                        <Link href="/account/register" className="flex items-center justify-center bg-main px-5 h-[40px] text-white rounded-md">
+                        <Link href="/account/register" className="flex items-center justify-center bg-main px-5 h-[40px] text-white rounded-md xxs:max-lg:hidden">
                             <span className="font-semibold uppercase text-sm">Register</span>
                         </Link>
                     </>

@@ -1,13 +1,13 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Fragment } from "react";
-import { MdOutlineShoppingCart } from "react-icons/md";
 import Image from "next/image";
 import { RiDeleteBin4Line } from "react-icons/ri";
 import toast from "react-hot-toast";
 import { useRouter, usePathname } from "next/navigation";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
+import { BsFillCartFill } from "react-icons/bs";
 
 //Tenstack Query
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -16,7 +16,7 @@ import { DELETE_CART, GET_CART_LIST } from "@/Tenstack/Functions/Cart/cart";
 import { Tables } from "@/Tenstack/Types/database.types";
 
 //UI
-import { Dialog, Loading } from "@/Components/Ui";
+import { Loading, useClickOutside } from "@/Components/Ui";
 
 
 const Cart = () => {
@@ -31,11 +31,16 @@ const Cart = () => {
     const queryClient = useQueryClient();
     const router = useRouter();
     const pathname = usePathname();
+    const ref = useRef<HTMLDivElement>(null)
+
+    //Handler
+    useClickOutside(ref, () => setOpen(false))
 
     //Tenstack
     const { data: cart } = useQuery({
         queryKey: ["cart"],
         queryFn: () => GET_CART_LIST(supabase)
+
     })
     const { mutate, isPending } = useMutation({
         mutationKey: ["deleteCart"],
@@ -74,19 +79,12 @@ const Cart = () => {
 
     return (
         <Fragment>
-            <button className="bg-primary xxs:max-lg:hidden text-secondary px-3 h-[40px] rounded-md  relative" onClick={() => setOpen(true)}>
-                <MdOutlineShoppingCart className="text-xl" />
-                <span className="bg-main w-5 h-5 flex items-center justify-center rounded-full absolute -top-1.5 text-sm -right-1.5">
-                    {cart?.length || 0}
-                </span>
+            <button className="relative flex-1 py-3.5 text-base font-medium text-gray-700" onClick={() => setOpen(!open)}>
+                <span className="xxs:max-sm:hidden">Cart </span>
+                <BsFillCartFill className="text-lg hidden xxs:max-sm:inline" />
+                <span className="text-main xxs:max-sm:hidden">({cart?.length || 0})</span>
             </button>
-            <Dialog
-                open={open}
-                onClose={() => setOpen(false)}
-                mainClassName="!justify-end !items-start !pt-20 !pr-10"
-                width={520}
-                className="!max-h-[800px]"
-            >
+            <div className={`absolute bottom-full left-0 w-full bg-gray-50 px-8 sm:px-8 xxs:px-4 pb-14 pt-5 transition-all shadow-5xl ${open ? "translate-y-0 visible opacity-100" : "invisible opacity-0 translate-y-2"}`} ref={ref}>
                 <div className="flex items-start mb-4">
                     <div className="flex-1">
                         <h4 className="text-xl text-gray-600">
@@ -108,7 +106,7 @@ const Cart = () => {
                             return (
                                 <tr key={i}>
                                     <td className={classes}>
-                                        <Image src={item.product?.image_1 as string} alt={item.product?.title as string} width={600} height={400} className="w-[250px] rounded-sm" />
+                                        <Image src={item.product?.image_1 as string} alt={item.product?.title as string} width={600} height={400} className="w-[250px] sm:w-[250px] xxs:w-[1000px] rounded-sm" />
                                     </td>
                                     <td className={classes}>
                                         <Link href={`/service/${item.product?.slug}`} className="!line-clamp-2 text-gray-700">{item.product?.title}</Link>
@@ -140,7 +138,7 @@ const Cart = () => {
                     <Link href={"/checkout"} className="bg-main block text-center w-full py-2.5 rounded-md font-semibold text-secondary">Checkout (${cart?.reduce((acc, obj) => acc + getDiscountPrice(obj.product as Tables<"product">), 0)})</Link>
                     <p className="text-sm text-center italic mt-2">You can unselect any selected services in the checkout page.</p>
                 </div>
-            </Dialog>
+            </div>
         </Fragment>
     );
 };

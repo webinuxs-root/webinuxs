@@ -182,10 +182,10 @@ const ProductInfo = () => {
                         }
                     </button>
                 </div>
-                <button className="flex gap-3 w-full justify-center items-center mt-4 py-2.5 bg-[#02a799] text-white rounded">
+                <Link href="https://api.whatsapp.com/message/UAXIYNES562EN1" className="flex gap-3 w-full justify-center items-center mt-4 py-2.5 bg-[#02a799] text-white rounded">
                     <IoLogoWhatsapp />
                     <span>What&apos;s App Support</span>
-                </button>
+                </Link>
                 <p className="text-center italic text-sm mt-2">{data.payment}</p>
             </div>
             <div className="border border-solid border-gray-200 px-4 py-5 rounded-md mt-6 flex items-center gap-4">
@@ -240,7 +240,7 @@ const ProductInfo = () => {
                     <span className="flex-1 font-medium text-[#0084B4]">{data.keyword || "..."}</span>
                 </p>
             </div>
-            <Link href="/" className="bg-main py-2.5 rounded font-medium text-white mt-6 flex gap-2 justify-center items-center">
+            <Link href="https://api.whatsapp.com/message/UAXIYNES562EN1" className="bg-main py-2.5 rounded font-medium text-white mt-6 flex gap-2 justify-center items-center">
                 <FaClone />
                 <span>Any Website Clone</span>
             </Link>

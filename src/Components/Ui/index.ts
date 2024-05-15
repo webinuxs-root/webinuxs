@@ -13,5 +13,6 @@ import Checkbox from "./Checkbox";
 import OrderStatus from "./OrderStatus";
 import { uniqueId } from "./RandomId";
 import ProfileImage from "./ProfileImage";
+import Drawer from "./Drawer";
 
-export { Container, Dialog, useClickOutside, ProductCard, Rating, CollapseContainer, CollapseButton, Collapse, Loading, Authorizer, auth, Checkbox, OrderStatus, uniqueId, ProfileImage };
+export { Container, Dialog, useClickOutside, ProductCard, Rating, CollapseContainer, CollapseButton, Collapse, Loading, Authorizer, auth, Checkbox, OrderStatus, uniqueId, ProfileImage, Drawer };

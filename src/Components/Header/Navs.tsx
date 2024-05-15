@@ -11,7 +11,7 @@ const Data = [
 
 const Navs = () => {
     return (
-        <div className="flex-1">
+        <div className="flex-1 xxs:max-lg:hidden">
             <div className="flex gap-8 bg-primary h-[40px] items-center px-6 rounded-lg text-secondary w-max">
                 {Data.map((item, i) => (
                     <Link href={item.path} key={i}>{item.name}</Link>

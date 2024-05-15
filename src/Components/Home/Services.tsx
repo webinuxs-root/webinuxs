@@ -9,10 +9,10 @@ const Services = () => {
             <Container>
                 <div className="text-right">
                     <div className="flex gap-2 items-center">
-                        <div className="flex-1 w-full bg-main h-1">
+                        <div className="flex-1 w-full bg-main h-1 xxs:max-sm:bg-transparent">
 
                         </div>
-                        <h4 className="text-2xl font-bold">What We <span className="text-main">Do?</span></h4>
+                        <h4 className="text-2xl sm:text-2xl xxs:text-xl font-bold">How we provide our <span className="text-main">Services?</span></h4>
                     </div>
                     <p className="w-[40%] 2xl:w-[40%] xl:w-[60%] lg:w-[80%] xxs:w-full ml-auto mt-2">We harness the power of cutting-edge technologies in three major field.</p>
                 </div>

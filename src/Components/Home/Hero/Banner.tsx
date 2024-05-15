@@ -33,8 +33,8 @@ const Banner = () => {
             <div className="flex">
                 {data?.sort((a, b) => a.position - b.position).map((item, i) => (
                     <div key={i} className="flex-[0_0_100%] mr-2">
-                        <div className="aspect-[2/1]">
-                            <Image src={item.image} width={1800} height={900} alt={item.alt} className="w-full h-full" />
+                        <div className="aspect-[2/1] sm:aspect-[2/1] xxs:aspect-[2/2]">
+                            <Image src={item.image} width={1800} height={900} alt={item.alt} className="w-full h-full xxs:max-sm:object-cover xxs:max-sm:object-left" />
                         </div>
                     </div>
                 ))}

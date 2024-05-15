@@ -25,10 +25,10 @@ const FeatureProduct = async () => {
         <section className="py-12">
             <Container>
                 <div className="mb-10">
-                    <h4 className="text-3xl font-semibold text-main">Feature Services</h4>
+                    <h4 className="text-3xl sm:text-3xl xxs:text-2xl font-semibold text-main">Feature Services</h4>
                     <p className="text-primary text-base mt-1.5">Most features services from Webinuxs and we are good at.</p>
                 </div>
-                <div className="grid grid-cols-4 gap-7">
+                <div className="grid grid-cols-4 xl:grid-cols-4 lg:grid-cols-3 lsm:grid-cols-2 xxs:grid-cols-1 gap-7">
                     {data?.map((item, i) => (
                         <ProductCard item={item.product as Tables<"product">} key={i} />
                     ))}

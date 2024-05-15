@@ -38,7 +38,7 @@ const TenstackProvider = ({ children }: { children: ReactNode }) => {
                     delay={300}
                 />
                 {children}
-                <ReactQueryDevtools initialIsOpen={false} />
+                {/* <ReactQueryDevtools initialIsOpen={false} /> */}
             </ReactQueryStreamedHydration>
         </QueryClientProvider>
     )

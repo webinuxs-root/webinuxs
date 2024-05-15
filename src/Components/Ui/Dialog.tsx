@@ -64,7 +64,7 @@ const Dialog = ({ open, onClose, children, width, height, className, mainClassNa
                             lockScroll
                         >
                             <m.div
-                                className={`bg-black/55 fixed top-0 left-0 w-full h-full flex justify-center items-center ${mainClassName}`}
+                                className={`bg-black/55 fixed top-0 left-0 w-full h-full flex justify-center items-center backdrop-blur-sm ${mainClassName}`}
                                 initial="unmount"
                                 exit="unmount"
                                 animate={open ? "mount" : "unmount"}

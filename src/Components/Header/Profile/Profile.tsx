@@ -59,7 +59,7 @@ const Profile = ({ data }: Props) => {
     }, [pathname])
 
     return (
-        <div className="relative" ref={ref}>
+        <div className="relative xxs:max-lg:hidden" ref={ref}>
             <button className="bg-main text-secondary px-3 h-[40px] rounded-md flex items-center gap-2" onClick={() => setOpen(!open)}>
                 {data.user.user_metadata.image ? <Image src={data.user.user_metadata.image} alt={data.user.id} width={100} height={100} className="w-[25px] rounded-full" /> : <Image src={"/profile-placeholder.png"} alt={data.user.id} width={100} height={100} className="w-[25px] rounded-full" />}
                 <span>My Profile</span>

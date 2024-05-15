@@ -66,7 +66,7 @@ const SearchBar = () => {
                         <IoSearch className="text-xl" />
                     </button>
                 }
-                <div className={`h-[40px] absolute top-0 right-full bg-black rounded-md mr-[16px] transition-all ${search ? "w-[450px]" : "w-0"}`}>
+                <div className={`h-[40px] absolute top-0 right-full bg-black rounded-md mr-[16px] transition-all ${search ? "w-[450px] md:w-[450px] lsm:w-[350px] msm:w-[260px] sm:w-[230px] xxs:w-[100px]" : "w-0"}`}>
                     <input
                         className="bg-transparent px-3 focus:outline-none w-full h-full rounded-md text-secondary"
                         placeholder="Search what you want...?"

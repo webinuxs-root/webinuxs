@@ -13,7 +13,7 @@ const Faq = () => {
                     <h4 className="text-2xl font-bold mb-2">FAQ & <span className="text-main">Answer</span></h4>
                     <p className="text-[15px]">We believe that transparency and clarity are key to building trust with our clients.</p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-2 xxs:grid-cols-1 gap-6 md:gap-6 xxs:gap-0">
+                <div className="grid grid-cols-2 lg:grid-cols-2 xxs:grid-cols-1 gap-6 lg:gap-6 xxs:gap-0">
                     <Left />
                     <Right />
                 </div>

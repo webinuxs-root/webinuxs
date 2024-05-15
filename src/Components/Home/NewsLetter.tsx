@@ -44,15 +44,15 @@ const NewsLetter = () => {
     return (
         <section className="pt-12 pb-20">
             <Container>
-                <div className="grid grid-cols-2 gap-5 bg-[url('/news-letter.png')] bg-center bg-no-repeat bg-cover px-12 py-28 rounded-lg">
+                <div className="grid grid-cols-2 xl:grid-cols-2 xxs:grid-cols-1 xl:gap-5 xxs:gap-0 gap-5 bg-[url('/news-letter.png')] bg-left bg-no-repeat bg-cover px-12 msm:px-12 sm:px-4 xxs:px-4 py-28 sm:py-28 xxs:py-16 rounded-lg">
                     <div>
-                        <h4 className="text-5xl font-semibold">Subscribe for Exclusive <br />Offers and<span className="text-main"> Updates</span></h4>
-                        <p className="text-lg mt-6">Get the Latest News and Deals Delivered Straight to your Inbox.</p>
+                        <h4 className="text-5xl lsm:text-5xl sm:text-3xl xxs:text-xl font-semibold">Subscribe for Exclusive <br />Offers and<span className="text-main"> Updates</span></h4>
+                        <p className="text-lg sm:text-lg xxs:text-base mt-6">Get the Latest News and Deals Delivered Straight to your Inbox.</p>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="flex mt-12 relative">
                                 <input
                                     placeholder="Your email address"
-                                    className="pl-14 pr-5 py-4 w-[500px] bg-white border peer border-solid border-gray-100 rounded-s-md placeholder:text-primary outline-none focus:border-main"
+                                    className="pl-14 pr-5 py-4 w-[500px] sm:w-[500px] xxs:w-full bg-white border peer border-solid border-gray-100 rounded-s-md placeholder:text-primary outline-none focus:border-main"
                                     required={true}
                                     {...register("email", { required: true })}
                                 />
