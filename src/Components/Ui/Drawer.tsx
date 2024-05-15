@@ -83,3 +83,5 @@ const Drawer = forwardRef<HTMLDivElement, Props>(({ open, onClose, children, pla
 });
 
 export default Drawer;
+
+Drawer.displayName = "Drawer"
