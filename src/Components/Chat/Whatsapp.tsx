@@ -41,7 +41,7 @@ const Whatsapp = () => {
                         </div>
                     </div>
                     <div className="p-[20px] text-center">
-                        <Link href="/" className="bg-[#25d366] flex items-center justify-center w-max mx-auto p-[9px_26px] rounded-[50px] shadow-[rgba(0,_0,_0,_0.25)_0px_1px_0px_0px] text-white gap-2 hover:bg-[#4fd878]" target="_blank">
+                        <Link href="https://api.whatsapp.com/message/UAXIYNES562EN1" className="bg-[#25d366] flex items-center justify-center w-max mx-auto p-[9px_26px] rounded-[50px] shadow-[rgba(0,_0,_0,_0.25)_0px_1px_0px_0px] text-white gap-2 hover:bg-[#4fd878]" target="_blank">
                             <FaWhatsapp className="text-3xl" />
                             <span className="text-base font-semibold">Chat on WhatsApp</span>
                         </Link>
