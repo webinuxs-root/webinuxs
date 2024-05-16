@@ -47,7 +47,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div className="col-span-3">
+        <div className="col-span-3 2xl:col-span-3 xl:col-span-4 xxs:max-xl:hidden">
             <div className="bg-primary text-secondary px-4 py-5 rounded-md">
                 <h4 className="text-lg font-semibold">Categories</h4>
                 <div>

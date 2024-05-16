@@ -63,7 +63,7 @@ const Page = async ({ searchParams }: Props) => {
             <section className="mt-[150px] mb-[130px]">
                 <Container>
                     <Breadcrumb />
-                    <div className="grid grid-cols-12 gap-12">
+                    <div className="grid grid-cols-12 gap-12 lsm:gap-12 xxs:gap-0">
                         <Sidebar />
                         <Products />
                     </div>

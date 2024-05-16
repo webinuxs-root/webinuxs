@@ -31,7 +31,7 @@ const Process = () => {
                 <h4 className="text-4xl font-bold text-black">Our <span className="text-main">Process</span></h4>
                 <p className="text-sm text-gray-600 w-[40%] md:w-[40%] msm:w-[60%] xxs:w-[90%] mx-auto mt-4">We believe in 3 steps purchase from our website.</p>
             </div>
-            <div className="w-[55%] lg:w-[55%] md:w-[80%] xxs:w-[100%] mx-auto">
+            <div className="w-[55%] lg:w-[55%] md:w-[80%] xxs:w-[95%] mx-auto">
                 <ol className="relative border-s border-main/20">
                     {data.map((item, i) => (
                         <li className="mb-10 ms-6" key={i}>

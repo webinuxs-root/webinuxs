@@ -55,8 +55,8 @@ const Form = () => {
     }
 
     return (
-        <div className="bg-primary px-14 py-16 rounded-md text-secondary">
-            <h5 className="text-3xl text-gray-200 mb-2">
+        <div className="bg-primary px-14 3xl:px-14 2xl:px-8 msm:px-14 xxs:px-8 4xl:py-20 py-16 3xl:py-16 2xl:py-8 msm:py-16 xxs:py-10 rounded-md text-secondary">
+            <h5 className="text-3xl sm:text-3xl xxs:text-2xl text-gray-200 mb-2">
                 Login to Your Account
             </h5>
             <p className="text-gray-400 mb-6">Please fill up the following form for login to your account</p>

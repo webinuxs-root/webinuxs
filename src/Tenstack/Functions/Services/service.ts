@@ -22,7 +22,7 @@ export const GET_SERVICES = async (client: SupabaseClient<Database>, value: Pagi
         data: data,
         count: count,
         page: value.page,
-        totalPage: Math.floor(Number(count) / limit)
+        totalPage: Math.ceil(Number(count) / limit)
     }
 }
 

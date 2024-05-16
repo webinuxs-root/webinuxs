@@ -1,8 +1,9 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { IoMdClose, IoIosArrowForward } from "react-icons/io";
 import { FaLinkedin, FaFacebookSquare } from "react-icons/fa";
 
@@ -26,6 +27,14 @@ const Socials = [
 const MobileNav = () => {
     //State
     const [open, setOpen] = useState<boolean>(false);
+
+    //Initializing Hook
+    const pathname = usePathname();
+
+    //Lifecycle Hook
+    useEffect(() => {
+        setOpen(false)
+    }, [pathname])
 
     return (
         <div className="hidden xxs:max-lg:block">

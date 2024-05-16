@@ -61,19 +61,24 @@ const Products = () => {
     }, [pagination])
 
     return (
-        <div className="col-span-9">
+        <div className="col-span-9 2xl:col-span-9 xl:col-span-8 xxs:col-span-12">
             <div className="flex items-center">
                 <div className="flex-1">
-                    <h4 className="text-xl">Showing full <span className="text-main">service results</span>, giving you the <span className="font-semibold">widest variety</span> of services at any price.</h4>
+                    <h4 className="text-xl sm:text-xl xxs:text-lg">Showing full <span className="text-main">service results</span>, giving you the <span className="font-semibold">widest variety</span> of services at any price.</h4>
                     <p className="text-sm mt-3">{data?.count} services</p>
                 </div>
-                <div>
+                <div className="xxs:max-msm:hidden">
                     {isFetching &&
                         <Loading color="black" size={30} />
                     }
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-8 mt-9">
+            <div className="mt-4 hidden xxs:max-msm:block">
+                {isFetching &&
+                    <Loading color="black" size={30} />
+                }
+            </div>
+            <div className="grid grid-cols-3 2xl:grid-cols-3 xl:grid-cols-2 lg:grid-cols-3 lsm:grid-cols-2 xxs:grid-cols-1 gap-8 mt-9">
                 {data?.data?.map((item, i) => (
                     <div key={i}>
                         <ProductCard item={item} />

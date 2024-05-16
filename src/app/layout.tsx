@@ -98,6 +98,9 @@ const arOneSans = AR_One_Sans({
 import Header from "@/Layout/Header";
 import Footer from "@/Layout/Footer";
 
+//Chat Head
+import Whatsapp from "@/Components/Chat/Whatsapp";
+
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <html lang="en" className={arOneSans.className}>
@@ -114,6 +117,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
             {children}
           </div>
           <Footer />
+          <Whatsapp />
         </TenstackProvider>
       </body>
     </html>
