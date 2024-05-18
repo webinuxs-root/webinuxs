@@ -55,8 +55,8 @@ const Register = () => {
         mutate({ ...rest })
     }
     return (
-        <div className="bg-primary px-12 py-12 rounded-md text-secondary">
-            <h5 className="text-3xl text-gray-200 mb-2">
+        <div className="bg-primary px-12 py-12 lsm:py-16 xxs:py-10 lsm:px-14 xxs:px-8 rounded-md text-secondary">
+            <h5 className="text-3xl sm:text-3xl xxs:text-2xl text-gray-200 mb-2">
                 Create Your Account
             </h5>
             <p className="text-gray-400 mb-6">Please fill up the following form for creating account</p>

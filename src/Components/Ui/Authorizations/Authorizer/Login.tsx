@@ -53,8 +53,8 @@ const Login = () => {
         mutate({ ...rest })
     }
     return (
-        <div className="bg-primary px-14 py-16 rounded-md text-secondary">
-            <h5 className="text-3xl text-gray-200 mb-2">
+        <div className="bg-primary px-14 py-16 lsm:py-16 xxs:py-10 lsm:px-14 xxs:px-8 rounded-md text-secondary">
+            <h5 className="text-3xl sm:text-3xl xxs:text-2xl text-gray-200 mb-2">
                 Login to Your Account
             </h5>
             <p className="text-gray-400 mb-6">Please fill up the following form for login to your account</p>

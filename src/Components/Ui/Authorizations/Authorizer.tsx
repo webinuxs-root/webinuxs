@@ -21,8 +21,7 @@ const Authorizer = () => {
         <Dialog
             open={open}
             onClose={auth.close}
-            width={550}
-            className="!p-0"
+            className="!p-0 w-[550px] lsm:w-[550px] msm:w-[500px] sm:w-[420px] xs:w-[320px] xxs:w-[270px]"
         >
             {current === "join" &&
                 <Register />
