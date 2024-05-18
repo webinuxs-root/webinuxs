@@ -1,23 +1,20 @@
 "use client"
 import { useState } from "react";
-import { useParams } from "next/navigation";
-import { FaCheck } from "react-icons/fa";
+import { useParams, useRouter, usePathname } from "next/navigation";
+import { FaCheck, FaShoppingCart, FaClone } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { MdCheckCircle } from "react-icons/md";
-import { FaShoppingCart } from "react-icons/fa";
 import { LuShoppingBag } from "react-icons/lu";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdFileCopy } from "react-icons/md";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton, FacebookIcon, LinkedinIcon, TwitterIcon, WhatsappIcon } from "react-share";
-import { FaClone } from "react-icons/fa6";
 import moment from "moment";
 import Link from "next/link";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
 
 //UI
-import { auth, Loading } from "@/Components/Ui";
+import { auth, Loading, useDeviceSize } from "@/Components/Ui";
 
 //Tenstack & Query
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
@@ -30,9 +27,11 @@ import { GET_CART_LIST } from "@/Tenstack/Functions/Cart/cart";
 
 const ProductInfo = () => {
     //Initializing Hook
-    const pathname = useParams();
+    const params = useParams();
     const router = useRouter();
+    const pathname = usePathname();
     const queryClient = useQueryClient();
+    const { width } = useDeviceSize();
 
     //Client
     const supabase = createClient();
@@ -42,8 +41,8 @@ const ProductInfo = () => {
 
     //Tenstack
     const { data } = useQuery({
-        queryKey: ["productBySlug", pathname.slug],
-        queryFn: () => GET_PRODUCT_BY_SLUG(supabase, pathname.slug as string)
+        queryKey: ["productBySlug", params.slug],
+        queryFn: () => GET_PRODUCT_BY_SLUG(supabase, params.slug as string)
     })
     const { data: profile } = useQuery({
         queryKey: ["profile"],
@@ -117,9 +116,9 @@ const ProductInfo = () => {
 
     return (
         <div>
-            <div className="border border-solid border-gray-200 px-4 py-5 rounded-md">
+            <div className="border border-solid border-gray-200 px-4 py-5 rounded-md xxs:max-xl:hidden">
                 <div className="flex gap-2 border-b border-solid border-gray-200 pb-4">
-                    <h5 className="flex-1 text-xl font-semibold text-gray-700">Regular Price</h5>
+                    <h5 className="flex-1 text-xl sm:text-xl xxs:text-lg font-semibold text-gray-700">Regular Price</h5>
                     <div className="flex gap-5 items-center">
                         <h5 className="flex items-start gap-1 text-lg font-medium text-gray-600 line-through">
                             ${data.regular_price}
@@ -188,23 +187,23 @@ const ProductInfo = () => {
                 </Link>
                 <p className="text-center italic text-sm mt-2">{data.payment}</p>
             </div>
-            <div className="border border-solid border-gray-200 px-4 py-5 rounded-md mt-6 flex items-center gap-4">
+            <div className="border border-solid border-gray-200 px-4 py-5 rounded-md mt-6 flex xxs:max-msm:flex-wrap items-center gap-4">
                 <h5 className="text-base font-medium text-gray-700">Share This Service:</h5>
                 <div className="flex gap-3 flex-1">
-                    <FacebookShareButton url={window.location.href}>
-                        <FacebookIcon size={55} borderRadius={5} />
+                    <FacebookShareButton url={process.env.NEXT_PUBLIC_CURRENT_DOMAIN + pathname}>
+                        <FacebookIcon size={width >= 480 ? 55 : 45} borderRadius={5} />
                     </FacebookShareButton>
-                    <LinkedinShareButton url={window.location.href} >
-                        <LinkedinIcon size={55} borderRadius={5} />
+                    <LinkedinShareButton url={process.env.NEXT_PUBLIC_CURRENT_DOMAIN + pathname} >
+                        <LinkedinIcon size={width >= 480 ? 55 : 45} borderRadius={5} />
                     </LinkedinShareButton>
-                    <TwitterShareButton url={window.location.href} >
-                        <TwitterIcon size={55} borderRadius={5} />
+                    <TwitterShareButton url={process.env.NEXT_PUBLIC_CURRENT_DOMAIN + pathname} >
+                        <TwitterIcon size={width >= 480 ? 55 : 45} borderRadius={5} />
                     </TwitterShareButton>
-                    <WhatsappShareButton url={window.location.href} >
-                        <WhatsappIcon size={55} borderRadius={5} />
+                    <WhatsappShareButton url={process.env.NEXT_PUBLIC_CURRENT_DOMAIN + pathname} >
+                        <WhatsappIcon size={width >= 480 ? 55 : 45} borderRadius={5} />
                     </WhatsappShareButton>
-                    <button className="bg-gray-500 rounded-[5px] px-4 text-white" onClick={() => {
-                        navigator.clipboard.writeText(window.location.href)
+                    <button className="bg-gray-500 rounded-[5px] px-4 sm:px-4 xxs:px-3 text-white" onClick={() => {
+                        navigator.clipboard.writeText(process.env.NEXT_PUBLIC_CURRENT_DOMAIN + pathname)
                     }}>
                         <MdFileCopy className="text-2xl" />
                     </button>
@@ -212,31 +211,31 @@ const ProductInfo = () => {
             </div>
             <div className="border border-solid border-gray-200 px-4 py-5 rounded-md mt-6">
                 <p className="flex gap-6 mb-2.5">
-                    <span className="flex-[0_0_35%] font-semibold">Last Updated</span>
+                    <span className="flex-[0_0_35%] msm:flex-[0_0_35%] sm:flex-[0_0_45%] xxs:flex-[0_0_50%] font-semibold">Last Updated</span>
                     <span className="flex-1 font-medium text-[#0084B4]">{moment(data.created_at).format("DD MMMM YYYY")}</span>
                 </p>
                 <p className="flex gap-6 mb-2.5">
-                    <span className="flex-[0_0_35%] font-semibold">High Resolution</span>
+                    <span className="flex-[0_0_35%] msm:flex-[0_0_35%] sm:flex-[0_0_45%] xxs:flex-[0_0_50%] font-semibold">High Resolution</span>
                     <span className="flex-1 font-medium text-[#0084B4]">{data.resolution ? "Yes" : "No"}</span>
                 </p>
                 <p className="flex gap-6 mb-2.5">
-                    <span className="flex-[0_0_35%] font-semibold">Widget Ready</span>
+                    <span className="flex-[0_0_35%] msm:flex-[0_0_35%] sm:flex-[0_0_45%] xxs:flex-[0_0_50%] font-semibold">Widget Ready</span>
                     <span className="flex-1 font-medium text-[#0084B4]">{data.widget_ready ? "Yes" : "No"}</span>
                 </p>
                 <p className="flex gap-6 mb-2.5">
-                    <span className="flex-[0_0_35%] font-semibold">Sales</span>
-                    <span className="flex-1 font-medium text-[#0084B4]">28230</span>
+                    <span className="flex-[0_0_35%] msm:flex-[0_0_35%] sm:flex-[0_0_45%] xxs:flex-[0_0_50%] font-semibold">Sales</span>
+                    <span className="flex-1 font-medium text-[#0084B4]">{data.sales}</span>
                 </p>
                 <p className="flex gap-6 mb-2.5">
-                    <span className="flex-[0_0_35%] font-semibold">Documentation</span>
+                    <span className="flex-[0_0_35%] msm:flex-[0_0_35%] sm:flex-[0_0_45%] xxs:flex-[0_0_50%] font-semibold">Documentation</span>
                     <span className="flex-1 font-medium text-[#0084B4]">{data.documentation ? "Yes" : "No"}</span>
                 </p>
                 <p className="flex gap-6 mb-2.5">
-                    <span className="flex-[0_0_35%] font-semibold">Layout</span>
+                    <span className="flex-[0_0_35%] msm:flex-[0_0_35%] sm:flex-[0_0_45%] xxs:flex-[0_0_50%] font-semibold">Layout</span>
                     <span className="flex-1 font-medium text-[#0084B4]">{data.layout ? "Yes" : "No"}</span>
                 </p>
                 <p className="flex gap-6 mb-2.5">
-                    <span className="flex-[0_0_35%] font-semibold">Keyword</span>
+                    <span className="flex-[0_0_35%] msm:flex-[0_0_35%] sm:flex-[0_0_45%] xxs:flex-[0_0_50%] font-semibold">Keyword</span>
                     <span className="flex-1 font-medium text-[#0084B4]">{data.keyword || "..."}</span>
                 </p>
             </div>

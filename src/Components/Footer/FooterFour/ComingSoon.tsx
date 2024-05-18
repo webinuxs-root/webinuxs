@@ -12,7 +12,7 @@ const ComingSoon = ({ open, onClose }: Props) => {
         <Dialog
             open={open}
             onClose={onClose}
-            width={350}
+            className="w-[350px]"
         >
             <div className="text-center py-4">
                 <FaGooglePlay className="text-4xl mx-auto text-main" />

@@ -1,18 +1,16 @@
 "use client"
-import { cloneElement } from "react";
-import Image from "next/image";
+import { Fragment, useState, cloneElement } from "react";
 import { MdDashboard } from "react-icons/md";
+import { PiSidebarSimpleBold } from "react-icons/pi";
+import { usePathname } from "next/navigation";
+import toast from "react-hot-toast";
+import Image from "next/image";
 import { LuShoppingBag } from "react-icons/lu";
 import { IoIosCart, IoMdSettings, IoMdLogOut } from "react-icons/io";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import toast from "react-hot-toast";
-
-//Components
-import ProfileDrawer from "./Sidebar/ProfileDrawer";
 
 //UI
-import { Loading } from "../Ui";
+import { Drawer, Loading } from "@/Components/Ui";
 
 //Tenstack & Supabase
 import { useQuery, useMutation } from "@tanstack/react-query";
@@ -20,7 +18,10 @@ import { createClient } from "@/Supabase/client";
 import { GET_PROFILE } from "@/Tenstack/Functions/Account/profile";
 import { LOGOUT_ACCOUNT } from "@/Tenstack/Functions/Account/account";
 
-const Sidebar = () => {
+const ProfileDrawer = () => {
+    //State
+    const [open, setOpen] = useState<boolean>(false);
+
     //Initializing Hook
     const pathname = usePathname();
 
@@ -49,9 +50,15 @@ const Sidebar = () => {
     }
 
     return (
-        <div>
-            <ProfileDrawer />
-            <div className="border border-solid border-main rounded-lg overflow-hidden xxs:max-xl:hidden">
+        <Fragment>
+            <button className="gap-2.5 items-center bg-main py-2 px-5 rounded-md text-white hover:bg-primary transition-all hidden xxs:max-xl:flex" onClick={() => setOpen(true)}>
+                <PiSidebarSimpleBold />
+                <span>Profile</span>
+            </button>
+            <Drawer
+                open={open}
+                onClose={() => setOpen(false)}
+            >
                 <div className="bg-main text-center py-14 2xl:py-14 xxs:py-8">
                     {data?.user?.user_metadata.image ?
                         <Image src={data?.user?.user_metadata.image} alt="Profile" width={600} height={600} className="w-[110px] rounded-full mx-auto" /> : <Image src={"/profile-placeholder.png"} alt="Profile" width={600} height={600} className="w-[110px] mx-auto" />
@@ -78,12 +85,12 @@ const Sidebar = () => {
                         }
                     </button>
                 </div>
-            </div>
-        </div>
+            </Drawer>
+        </Fragment>
     );
 };
 
-export default Sidebar;
+export default ProfileDrawer;
 
 export const ButtonList = [
     { name: "Dashboard", url: "/my-account", icon: <MdDashboard /> },

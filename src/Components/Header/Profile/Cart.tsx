@@ -84,8 +84,7 @@ const Cart = () => {
                 open={open}
                 onClose={() => setOpen(false)}
                 mainClassName="!justify-end !items-start !pt-20 !pr-10"
-                width={520}
-                className="!max-h-[800px]"
+                className="!max-h-[800px] w-[520px] overflow-auto"
             >
                 <div className="flex items-start mb-4">
                     <div className="flex-1">

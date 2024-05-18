@@ -16,7 +16,7 @@ const Graph = async () => {
 
     return (
         <div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 md:grid-cols-3 xxs:grid-cols-1 gap-6">
                 <div className="bg-gradient-to-bl from-[#eb4786] to-[#b854a6] rounded-md">
                     <div className="py-7 px-5 text-white">
                         <h6 className="text-2xl font-bold">{data.totalOrder} Purchase(s)</h6>

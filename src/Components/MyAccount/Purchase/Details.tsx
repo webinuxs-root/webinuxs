@@ -55,12 +55,11 @@ const Details = ({ item }: Props) => {
 
     return (
         <Fragment>
-            <button className="bg-main px-3 py-1.5 text-sm font-semibold text-white rounded" onClick={() => setOpen(true)}>View Details</button>
+            <button className="bg-main px-3 xxs:max-sm:mt-2 py-1.5 text-sm font-semibold text-white rounded" onClick={() => setOpen(true)}>View Details</button>
             <Dialog
                 open={open}
                 onClose={() => setOpen(false)}
-
-                width={800}
+                className="w-[800px] lg:w-[800px] md:w-[600px] lsm:w-[550px] msm:w-[500px] sm:w-[420px] xs:w-[320px] xxs:[270px]"
             >
                 <div className="border-b flex items-center border-solid border-gray-200 pb-3">
                     <div className="flex-1">

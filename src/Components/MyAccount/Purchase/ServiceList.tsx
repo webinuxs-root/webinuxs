@@ -28,7 +28,7 @@ const ServiceList = () => {
         <div>
             {data?.map((item, i) => (
                 <div className="border border-solid mb-6 rounded-sm border-gray-200" key={i}>
-                    <div className="border-b flex items-center border-solid border-gray-200 px-5 py-3">
+                    <div className="border-b flex xxs:max-sm:flex-wrap items-center border-solid border-gray-200 px-5 py-3">
                         <div className="flex-1">
                             <h4 className="text-lg font-semibold text-main">
                                 {item.order_id}
@@ -45,7 +45,7 @@ const ServiceList = () => {
                             <LiaServicestack className="text-2xl" />
                             <span className="text-lg font-semibold text-primary">Serv<span className="text-main">ices</span></span>
                         </h5>
-                        <div className="mt-4">
+                        <div className="mt-4 overflow-auto">
                             <table className="table-auto w-full min-w-max text-left">
                                 <thead>
                                     <tr>

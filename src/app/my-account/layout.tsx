@@ -30,11 +30,11 @@ const Layout = async ({ children }: { children: ReactNode }) => {
         <TenstackWrapper client={queryClient}>
             <section className="mt-[150px] mb-[130px]">
                 <Container className="">
-                    <div className="grid grid-cols-12 gap-14">
-                        <div className="col-span-3">
+                    <div className="grid grid-cols-12 gap-14 2xl:gap-14 xl:gap-8 xxs:gap-0 xxs:max-xl:gap-y-8">
+                        <div className="col-span-3 xxs:max-xl:col-span-12">
                             <Sidebar />
                         </div>
-                        <div className="col-span-9">
+                        <div className="col-span-9 xxs:max-xl:col-span-12">
                             {children}
                         </div>
                     </div>

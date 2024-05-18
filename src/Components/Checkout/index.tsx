@@ -55,7 +55,7 @@ const Checkout = () => {
 
     return (
         <div>
-            <div className="w-[65%] mx-auto">
+            <div className="w-[65%] lsm:w-[65%] xxs:w-full mx-auto">
                 <div className="w-full relative flex items-center justify-between">
                     {StepperBtn.map((item, i) => (
                         <div className={`relative z-10 grid place-items-center rounded-full font-bold transition-all duration-300`} key={i}>

@@ -14,5 +14,6 @@ import OrderStatus from "./OrderStatus";
 import { uniqueId } from "./RandomId";
 import ProfileImage from "./ProfileImage";
 import Drawer from "./Drawer";
+import useDeviceSize from "./UseDeviceSize";
 
-export { Container, Dialog, useClickOutside, ProductCard, Rating, CollapseContainer, CollapseButton, Collapse, Loading, Authorizer, auth, Checkbox, OrderStatus, uniqueId, ProfileImage, Drawer };
+export { Container, Dialog, useClickOutside, ProductCard, Rating, CollapseContainer, CollapseButton, Collapse, Loading, Authorizer, auth, Checkbox, OrderStatus, uniqueId, ProfileImage, Drawer, useDeviceSize };

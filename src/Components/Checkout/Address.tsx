@@ -97,11 +97,11 @@ const Address = () => {
     }
 
     return (
-        <form className="grid grid-cols-12 gap-12 mt-14" onSubmit={handleSubmit(onSubmit)}>
-            <div className="col-span-8">
+        <form className="grid grid-cols-12 gap-12 2xl:gap-12 xxs:gap-0 xxs:max-2xl:gap-y-12 mt-14" onSubmit={handleSubmit(onSubmit)}>
+            <div className="col-span-8 2xl:col-span-8 xxs:col-span-12">
                 <h4 className="text-2xl font-semibold mb-6">Customer <span className="text-main">Details</span></h4>
                 <div className="grid grid-cols-2 gap-5">
-                    <div>
+                    <div className="xxs:max-sm:col-span-2">
                         <label htmlFor="firstName" className="block mb-1.5 text-base text-primary">First Name</label>
                         <input
                             className="border border-solid border-gray-200 w-full px-4 py-2.5 rounded text-[15px] focus:outline-main"
@@ -118,7 +118,7 @@ const Address = () => {
                             </p>
                         }
                     </div>
-                    <div>
+                    <div className="xxs:max-sm:col-span-2">
                         <label htmlFor="lastName" className="block mb-1.5 text-base text-primary">Last Name</label>
                         <input
                             className="border border-solid border-gray-200 w-full px-4 py-2.5 rounded text-[15px] focus:outline-main"
@@ -173,7 +173,7 @@ const Address = () => {
                             </p>
                         }
                     </div>
-                    <div>
+                    <div className="xxs:max-sm:col-span-2">
                         <label htmlFor="country" className="block mb-1.5 text-base text-primary">Country</label>
                         <input
                             className="border border-solid border-gray-200 w-full px-4 py-2.5 rounded text-[15px] focus:outline-main"
@@ -190,7 +190,7 @@ const Address = () => {
                             </p>
                         }
                     </div>
-                    <div>
+                    <div className="xxs:max-sm:col-span-2">
                         <label htmlFor="state" className="block mb-1.5 text-base text-primary">State</label>
                         <input
                             className="border border-solid border-gray-200 w-full px-4 py-2.5 rounded text-[15px] focus:outline-main"
@@ -233,52 +233,56 @@ const Address = () => {
                 </div>
                 <p className="text-sm mt-6 italic">We are accepting zero payment system. Place order without paying any payment. After order we will show you demo, and confirmed order.</p>
             </div>
-            <div className="col-span-4">
+            <div className="col-span-4 2xl:col-span-4 xxs:col-span-12">
                 <h4 className="text-2xl font-semibold mb-6">Cart <span className="text-main">Summery</span></h4>
                 <div className="p-5 bg-primary text-secondary rounded-md">
                     <h6 className="text-secondary text-xl font-medium mb-1.5">Selected items (2 items)</h6>
-                    <table className="table-auto w-full min-w-max text-left">
-                        <tbody>
-                            {selected?.map((item, i) => (
-                                <tr key={i}>
-                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
-                                        <p className="line-clamp-1">{item.product?.title}</p>
-                                    </td>
-                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${getDiscountPrice(item.product as Tables<"product">)}</td>
-                                </tr>
-                            ))}
-                            {selected?.length === 0 &&
-                                <tr>
-                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2 text-main">
-                                        Please select at least one service.
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <div className="overflow-auto">
+                        <table className="table-auto w-full min-w-max text-left">
+                            <tbody>
+                                {selected?.map((item, i) => (
+                                    <tr key={i}>
+                                        <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
+                                            <p className="line-clamp-1">{item.product?.title}</p>
+                                        </td>
+                                        <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${getDiscountPrice(item.product as Tables<"product">)}</td>
+                                    </tr>
+                                ))}
+                                {selected?.length === 0 &&
+                                    <tr>
+                                        <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2 text-main">
+                                            Please select at least one service.
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                     <h6 className="text-secondary text-xl font-medium mb-1.5 mt-4">Amount</h6>
-                    <table className="table-auto w-full min-w-max text-left">
-                        <tbody>
-                            <tr>
-                                <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
-                                    Subtotal
-                                </td>
-                                <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.subtotal}</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-solid border-gray-700 pb-3 pt-2">
-                                    Coupon Discount
-                                </td>
-                                <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.discount}</td>
-                            </tr>
-                            <tr>
-                                <td className="pb-3 pt-2">
-                                    <p className="text-xl font-semibold">Total</p>
-                                </td>
-                                <td className="text-right text-main font-semibold text-xl pb-3 pt-2">${price?.total}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="overflow-auto">
+                        <table className="table-auto w-full min-w-max text-left">
+                            <tbody>
+                                <tr>
+                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
+                                        Subtotal
+                                    </td>
+                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.subtotal}</td>
+                                </tr>
+                                <tr>
+                                    <td className="border-b border-solid border-gray-700 pb-3 pt-2">
+                                        Coupon Discount
+                                    </td>
+                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.discount}</td>
+                                </tr>
+                                <tr>
+                                    <td className="pb-3 pt-2">
+                                        <p className="text-xl font-semibold">Total</p>
+                                    </td>
+                                    <td className="text-right text-main font-semibold text-xl pb-3 pt-2">${price?.total}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div className="mt-4">
                     <button className="bg-main w-full py-3 rounded-md text-white font-semibold relative" type="submit" disabled={isPending}>

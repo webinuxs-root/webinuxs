@@ -11,13 +11,11 @@ interface Props {
     open: boolean;
     onClose: () => void;
     children: ReactNode;
-    width?: number;
-    height?: number;
     className?: string;
     mainClassName?: string;
 }
 
-const Dialog = ({ open, onClose, children, width, height, className, mainClassName }: Props) => {
+const Dialog = ({ open, onClose, children, className, mainClassName }: Props) => {
     const animation = {
         unmount: {
             opacity: 0,
@@ -77,7 +75,6 @@ const Dialog = ({ open, onClose, children, width, height, className, mainClassNa
                                     exit="unmount"
                                     animate={open ? "mount" : "unmount"}
                                     variants={animation}
-                                    style={{ width: width + "px", height: height + "px" }}
                                     ref={ref}
                                 >
                                     {children}

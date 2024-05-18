@@ -107,113 +107,119 @@ const Cart = () => {
     }, [selected, discount])
 
     return (
-        <div className="grid grid-cols-12 gap-12 mt-14">
-            <div className="col-span-8">
+        <div className="grid grid-cols-12 gap-12 2xl:gap-12 xxs:gap-0 xxs:max-2xl:gap-y-12 mt-14">
+            <div className="col-span-8 2xl:col-span-8 xxs:col-span-12">
                 <h4 className="text-2xl font-semibold mb-6">Cart <span className="text-main">List</span></h4>
-                <table className="table-auto w-full min-w-max text-left">
-                    <thead>
-                        <tr>
-                            {TABLE_HEAD.map((item, i) => (
-                                <Fragment key={i}>
-                                    {item === "Checkbox" ? <th className="text-white border border-solid border-transparent bg-main px-3 rounded-[7px_0px_0px_0px]">
-                                        <Checkbox
-                                            onChange={() => onMainCheck()}
-                                            isLevel={false}
-                                            checked={data?.every(a => selected?.some(b => a.id === b.id)) ? true : false}
-                                            inputClassName="checked:!bg-white checked:!border-white"
-                                            tickClassName="!text-main"
-                                        />
-                                    </th> :
-                                        <th className={`text-white border border-solid border-transparent bg-main px-3 text-base ${TABLE_HEAD.length - 1 === i ? "rounded-[0px_7px_0px_0px]" : ""}`}>{item}</th>
-                                    }
-                                </Fragment>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data?.map((item, i) => (
-                            <tr key={i}>
-                                <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">
-                                    <Checkbox
-                                        checked={selected?.find(a => a.id === item.id) ? true : false}
-                                        onChange={() => onSingleCheck(item)}
-                                        isLevel={false}
-                                    />
-                                </td>
-                                <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">
-                                    <Image src={item.product?.image_1 as string} alt={item.product?.title as string} width={600} height={400} className="w-[50px] rounded-sm" />
-                                </td>
-                                <td className="w-[300px] py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">
-                                    {item.product?.title}
-                                </td>
-                                <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">
-                                    ${getDiscountPrice(item.product as Tables<"product">)}
-                                </td>
-                                <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">1</td>
-                                <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">${getDiscountPrice(item.product as Tables<"product">) * 1}</td>
-                                <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100 text-center">
-                                    <div className="text-center">
-                                        <AiOutlineDelete className="mx-auto text-xl" />
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
-                        {data?.length === 0 &&
-                            <tr>
-                                <td colSpan={TABLE_HEAD.length} className="text-center py-8">
-                                    No product on your cart.
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-            <div className="col-span-4">
-                <h4 className="text-2xl font-semibold mb-6">Cart <span className="text-main">Summery</span></h4>
-                <div className="p-5 bg-primary text-secondary rounded-md">
-                    <h6 className="text-secondary text-xl font-medium mb-1.5">Selected items (2 items)</h6>
+                <div className="overflow-auto">
                     <table className="table-auto w-full min-w-max text-left">
+                        <thead>
+                            <tr>
+                                {TABLE_HEAD.map((item, i) => (
+                                    <Fragment key={i}>
+                                        {item === "Checkbox" ? <th className="text-white border border-solid border-transparent bg-main px-3 rounded-[7px_0px_0px_0px]">
+                                            <Checkbox
+                                                onChange={() => onMainCheck()}
+                                                isLevel={false}
+                                                checked={data?.every(a => selected?.some(b => a.id === b.id)) ? true : false}
+                                                inputClassName="checked:!bg-white checked:!border-white"
+                                                tickClassName="!text-main"
+                                            />
+                                        </th> :
+                                            <th className={`text-white border border-solid border-transparent bg-main px-3 text-base ${TABLE_HEAD.length - 1 === i ? "rounded-[0px_7px_0px_0px]" : ""}`}>{item}</th>
+                                        }
+                                    </Fragment>
+                                ))}
+                            </tr>
+                        </thead>
                         <tbody>
-                            {selected?.map((item, i) => (
+                            {data?.map((item, i) => (
                                 <tr key={i}>
-                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
-                                        <p className="line-clamp-1">{item.product?.title}</p>
+                                    <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">
+                                        <Checkbox
+                                            checked={selected?.find(a => a.id === item.id) ? true : false}
+                                            onChange={() => onSingleCheck(item)}
+                                            isLevel={false}
+                                        />
                                     </td>
-                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${getDiscountPrice(item.product as Tables<"product">)}</td>
+                                    <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">
+                                        <Image src={item.product?.image_1 as string} alt={item.product?.title as string} width={600} height={400} className="w-[50px] rounded-sm" />
+                                    </td>
+                                    <td className="w-[300px] py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">
+                                        {item.product?.title}
+                                    </td>
+                                    <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">
+                                        ${getDiscountPrice(item.product as Tables<"product">)}
+                                    </td>
+                                    <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">1</td>
+                                    <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100">${getDiscountPrice(item.product as Tables<"product">) * 1}</td>
+                                    <td className="py-2 bg-white px-3 border-b border-l border-r border-solid border-gray-100 text-center">
+                                        <div className="text-center">
+                                            <AiOutlineDelete className="mx-auto text-xl" />
+                                        </div>
+                                    </td>
                                 </tr>
                             ))}
-                            {selected?.length === 0 &&
+                            {data?.length === 0 &&
                                 <tr>
-                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2 text-main">
-                                        Please select at least one service.
+                                    <td colSpan={TABLE_HEAD.length} className="text-center py-8">
+                                        No product on your cart.
                                     </td>
                                 </tr>
                             }
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div className="col-span-4 2xl:col-span-4 xxs:col-span-12">
+                <h4 className="text-2xl font-semibold mb-6">Cart <span className="text-main">Summery</span></h4>
+                <div className="p-5 bg-primary text-secondary rounded-md">
+                    <h6 className="text-secondary text-xl font-medium mb-1.5">Selected items (2 items)</h6>
+                    <div className="overflow-auto">
+                        <table className="table-auto w-full min-w-max text-left">
+                            <tbody>
+                                {selected?.map((item, i) => (
+                                    <tr key={i}>
+                                        <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
+                                            <p className="line-clamp-1">{item.product?.title}</p>
+                                        </td>
+                                        <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${getDiscountPrice(item.product as Tables<"product">)}</td>
+                                    </tr>
+                                ))}
+                                {selected?.length === 0 &&
+                                    <tr>
+                                        <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2 text-main">
+                                            Please select at least one service.
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                     <h6 className="text-secondary text-xl font-medium mb-1.5 mt-4">Amount</h6>
-                    <table className="table-auto w-full min-w-max text-left">
-                        <tbody>
-                            <tr>
-                                <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
-                                    Subtotal
-                                </td>
-                                <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.subtotal}</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-solid border-gray-700 pb-3 pt-2">
-                                    Coupon Discount
-                                </td>
-                                <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.discount}</td>
-                            </tr>
-                            <tr>
-                                <td className="pb-3 pt-2">
-                                    <p className="text-xl font-semibold">Total</p>
-                                </td>
-                                <td className="text-right text-main font-semibold text-xl pb-3 pt-2">${price?.total}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="overflow-auto">
+                        <table className="table-auto w-full min-w-max text-left">
+                            <tbody>
+                                <tr>
+                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
+                                        Subtotal
+                                    </td>
+                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.subtotal}</td>
+                                </tr>
+                                <tr>
+                                    <td className="border-b border-solid border-gray-700 pb-3 pt-2">
+                                        Coupon Discount
+                                    </td>
+                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.discount}</td>
+                                </tr>
+                                <tr>
+                                    <td className="pb-3 pt-2">
+                                        <p className="text-xl font-semibold">Total</p>
+                                    </td>
+                                    <td className="text-right text-main font-semibold text-xl pb-3 pt-2">${price?.total}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div className="mt-4">
                     <button className={`bg-main w-full py-3 rounded-md text-white font-semibold ${selected?.length === 0 ? "opacity-50" : ""}`} onClick={() => setStep?.(2)} disabled={selected?.length === 0}>

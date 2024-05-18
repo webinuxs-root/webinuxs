@@ -76,7 +76,7 @@ const ProfileSettings = () => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid grid-cols-2 gap-5">
-                    <div>
+                    <div className="xxs:max-sm:col-span-2">
                         <label htmlFor="firstName" className="block mb-1.5 text-base text-primary">First Name</label>
                         <input
                             className="border border-solid border-gray-200 w-full px-4 py-2.5 rounded text-[15px] focus:outline-main"
@@ -93,7 +93,7 @@ const ProfileSettings = () => {
                             </p>
                         }
                     </div>
-                    <div>
+                    <div className="xxs:max-sm:col-span-2">
                         <label htmlFor="lastName" className="block mb-1.5 text-base text-primary">Last Name</label>
                         <input
                             className="border border-solid border-gray-200 w-full px-4 py-2.5 rounded text-[15px] focus:outline-main"
@@ -127,7 +127,7 @@ const ProfileSettings = () => {
                             </p>
                         }
                     </div>
-                    <div>
+                    <div className="xxs:max-sm:col-span-2">
                         <label htmlFor="country" className="block mb-1.5 text-base text-primary">Country</label>
                         <input
                             className="border border-solid border-gray-200 w-full px-4 py-2.5 rounded text-[15px] focus:outline-main"
@@ -144,7 +144,7 @@ const ProfileSettings = () => {
                             </p>
                         }
                     </div>
-                    <div>
+                    <div className="xxs:max-sm:col-span-2">
                         <label htmlFor="state" className="block mb-1.5 text-base text-primary">State</label>
                         <input
                             className="border border-solid border-gray-200 w-full px-4 py-2.5 rounded text-[15px] focus:outline-main"

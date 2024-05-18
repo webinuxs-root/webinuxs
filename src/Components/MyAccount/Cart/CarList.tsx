@@ -35,7 +35,7 @@ const CarList = () => {
                     <p className="text-[15px] mt-1 text-gray-600">You can manage cart from cart window.</p>
                 </div>
             }
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-3 lg:grid-cols-3 lsm:grid-cols-2 xxs:grid-cols-1 gap-8">
                 {data?.map((item, i) => (
                     <div className="bg-white text-black rounded-lg overflow-hidden" key={i}>
                         <Link href={`/service/${item.product?.slug}`}>

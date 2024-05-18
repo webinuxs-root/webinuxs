@@ -40,7 +40,7 @@ const BestSelling = () => {
                 </div>
             }
             {selling &&
-                <div className="grid grid-cols-4 gap-7">
+                <div className="grid grid-cols-4 xl:grid-cols-4 lg:grid-cols-3 lsm:grid-cols-2 xxs:grid-cols-1 gap-7">
                     {selling?.map((item, i) => (
                         <ProductCard item={item as Tables<"product">} key={i} />
                     ))}

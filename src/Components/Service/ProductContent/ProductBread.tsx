@@ -44,8 +44,8 @@ const ProductBread = () => {
                     {data.category.name}
                 </Link>
             </div>
-            <h4 className="text-5xl font-medium">{data.title}</h4>
-            <div className="mt-5 flex gap-8 items-center">
+            <h4 className="text-5xl xl:text-5xl msm:text-4xl sm:text-3xl xxs:text-2xl font-medium">{data.title}</h4>
+            <div className="mt-5 flex gap-x-8 items-center xxs:max-md:flex-wrap md:gap-x-8 xxs:gap-x-6 xxs:max-md:gap-y-4">
                 <p className="flex gap-2 items-center">
                     <span className="text-base">By</span>
                     <span className="text-base text-main">WEBINUXS</span>
@@ -55,11 +55,11 @@ const ProductBread = () => {
                     <span className="font-semibold">{data.sales}</span>
                     <span className="text-gray-600">sales</span>
                 </p>
-                <p className="flex gap-2 items-center">
+                <p className="flex gap-2 items-center xxs:max-sm:hidden">
                     <span className="text-green-600 font-medium">Recently Updated</span>
                     <FaCheckCircle className="text-main mt-px " />
                 </p>
-                <p className="flex gap-2 items-center">
+                <p className="flex gap-2 items-center xxs:max-sm:hidden">
                     <span className="text-green-600 font-medium">Well Documented</span>
                     <FaCheckCircle className="text-main mt-px" />
                 </p>

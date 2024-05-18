@@ -102,66 +102,70 @@ const Payment = () => {
     }
 
     return (
-        <div className="grid grid-cols-12 gap-12 mt-14">
-            <div className="col-span-8">
+        <div className="grid grid-cols-12 gap-12 2xl:gap-12 xxs:gap-0 xxs:max-2xl:gap-y-12 mt-14">
+            <div className="col-span-8 2xl:col-span-8 xxs:col-span-12">
                 <h4 className="text-2xl font-semibold mb-6">Zero <span className="text-main">Payment</span></h4>
                 <div className="border border-solid border-green-600 p-5 bg-green-50 rounded-md">
                     <h4 className="text-2xl font-semibold mb-2">We are not accepting any payment without showing you demo.</h4>
                     <p className="text-base text-gray-600">You don&apos;t need to pay during purchasing our service. Here we are using zero payment system. Zero payment system means, you don&apos;t need to give any payment when you are purchasing a service from our website. After purchasing your service we will contact with you and show you our demo website. If you choose we will continue further process.</p>
                     <h5 className="my-5 text-lg font-semibold text-green-600">What is our payment policy?</h5>
                     <p className="text-base text-gray-600">Our payment policy is zero payment policy. In this policy you can purchase any kind services from our website without zero payment. Our policy is based on 3 basic steps. Firstly, you can purchase services without paying. Secondly, we will contact you and show you our demos. Lastly if you choose our demo, you can confirmed by paying or can cancel the purchase.</p>
-                    <p className="mt-5 bg-green-600 px-3 py-2 text-white rounded w-max">** Please click on confirm purchase button to place an order.</p>
+                    <p className="mt-5 bg-green-600 px-3 py-2 text-white rounded w-max lsm:w-max xxs:w-auto">** Please click on confirm purchase button to place an order.</p>
                 </div>
                 <div className="bg-main mt-12 px-4 py-3 rounded-md text-white">
                     <p className="italic">By placing the order, you are accepting our payment policy. We will contact with you in 2 working days after placing the orders. We will show all demos in live meeting, we believe this will increase trust between us.</p>
                 </div>
             </div>
-            <div className="col-span-4">
+            <div className="col-span-4 2xl:col-span-4 xxs:col-span-12">
                 <h4 className="text-2xl font-semibold mb-6">Cart <span className="text-main">Summery</span></h4>
                 <div className="p-5 bg-primary text-secondary rounded-md">
                     <h6 className="text-secondary text-xl font-medium mb-1.5">Selected items (2 items)</h6>
-                    <table className="table-auto w-full min-w-max text-left">
-                        <tbody>
-                            {selected?.map((item, i) => (
-                                <tr key={i}>
-                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
-                                        <p className="line-clamp-1">{item.product?.title}</p>
-                                    </td>
-                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${getDiscountPrice(item.product as Tables<"product">)}</td>
-                                </tr>
-                            ))}
-                            {selected?.length === 0 &&
-                                <tr>
-                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2 text-main">
-                                        Please select at least one service.
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <div className="overflow-auto">
+                        <table className="table-auto w-full min-w-max text-left">
+                            <tbody>
+                                {selected?.map((item, i) => (
+                                    <tr key={i}>
+                                        <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
+                                            <p className="line-clamp-1">{item.product?.title}</p>
+                                        </td>
+                                        <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${getDiscountPrice(item.product as Tables<"product">)}</td>
+                                    </tr>
+                                ))}
+                                {selected?.length === 0 &&
+                                    <tr>
+                                        <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2 text-main">
+                                            Please select at least one service.
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                     <h6 className="text-secondary text-xl font-medium mb-1.5 mt-4">Amount</h6>
-                    <table className="table-auto w-full min-w-max text-left">
-                        <tbody>
-                            <tr>
-                                <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
-                                    Subtotal
-                                </td>
-                                <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.subtotal}</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-solid border-gray-700 pb-3 pt-2">
-                                    Coupon Discount
-                                </td>
-                                <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.discount}</td>
-                            </tr>
-                            <tr>
-                                <td className="pb-3 pt-2">
-                                    <p className="text-xl font-semibold">Total</p>
-                                </td>
-                                <td className="text-right text-main font-semibold text-xl pb-3 pt-2">${price?.total}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="overflow-auto">
+                        <table className="table-auto w-full min-w-max text-left">
+                            <tbody>
+                                <tr>
+                                    <td className="w-[300px] border-b border-solid border-gray-700 pb-3 pt-2">
+                                        Subtotal
+                                    </td>
+                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.subtotal}</td>
+                                </tr>
+                                <tr>
+                                    <td className="border-b border-solid border-gray-700 pb-3 pt-2">
+                                        Coupon Discount
+                                    </td>
+                                    <td className="text-right font-semibold border-b border-solid border-gray-700 pb-3 pt-2">${price?.discount}</td>
+                                </tr>
+                                <tr>
+                                    <td className="pb-3 pt-2">
+                                        <p className="text-xl font-semibold">Total</p>
+                                    </td>
+                                    <td className="text-right text-main font-semibold text-xl pb-3 pt-2">${price?.total}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div className="mt-4">
                     <button className="bg-main w-full py-3 rounded-md text-white font-semibold relative" onClick={onConfirm} disabled={isPending || prPending || dlPending}>

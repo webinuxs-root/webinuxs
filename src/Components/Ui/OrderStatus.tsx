@@ -32,7 +32,7 @@ const OrderStatus = ({ status }: Props) => {
 
     return (
         <div className="mt-10 mb-14">
-            <div className="w-[65%] mx-auto">
+            <div className="w-[65%] msm:w-[65%] sm:w-[75%] xxs:w-[85%] mx-auto">
                 <div className="w-full relative flex items-center justify-between">
                     {StepperBtn.map((item, i) => (
                         <div className={`border border-solid p-5 rounded-full w-4 h-4 z-10 relative bg-white ${status === "cancelled" ? "border-gray-200" : (isComplete(item.serial) ? "border-green-600" : "border-main")}`} key={i}>
